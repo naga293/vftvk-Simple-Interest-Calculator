@@ -1,16 +1,42 @@
+<!DOCTYPE html><!--specifies doc type to the browser---->
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script><!--connecting to javascript-->
+    <link rel="stylesheet" href="style.css"><!--connecting to external CSS-->
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <div class="maindiv"><!--writing whole content in a division so that it can have background colour different from that of page-->
+        <h1>Simple Interest Calculator</h1><!--headaing-->
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+        Amount <input type="number"  id="principal">  <br/><br/><!--numerical input for principal amount-->
+        Rate <input type="range"  id="rate" min="1" max="20" step="0.25" value="10.5"onchange="updateRate(this.Value)"><!--slider input for interest rate-->  
+        <span id="rate_val"><!--displaying slider value-->
+            10.25<!--displaying default value-->
+        </span>%
+        <br/><br/>
+        No. of Years <select id="years"> <!--drop down input for number of years-->
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        </select>
+        <br/><br/>
+        
 
-        <button onclick="compute()">Compute</button>
+        <button onclick="compute(this.text)">Compute Interest</button><br/><br/><!--button is added to calculate output. compute function is called-->
+        <span id="result"></span><br><!--displaying the output-->
+        
+        <footer>
+
+            &#169; This Calculator belongs to Naga Srihari
+
+        </footer>
+        </div>
     </body>
 </html>
